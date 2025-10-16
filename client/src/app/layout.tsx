@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className="antialiased relative min-h-screen">
         {/* Background animation behind everything */}
         <div className="fixed inset-0 -z-10">
-          <BackgroundAnimation />
+          {/* <BackgroundAnimation /> */}
         </div>
 
         {/* Foreground content */}

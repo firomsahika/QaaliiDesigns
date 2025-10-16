@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative py-2 md:py-2 lg:py-4 flex min-h-[90vh] items-center justify-center px-4">
+    <section className="relative py-2 md:py-2 lg:py-4 flex h-screen items-center justify-center px-4">
       {/* Main Content */}
       <div className="relative flex flex-col items-center text-center space-y-6 max-w-2xl z-10">
         {/* Subtitle */}
@@ -22,7 +22,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight 
+          className="text-center text-2xl sm:text-5xl md:text-6xl font-extrabold leading-tight 
             bg-gradient-to-r from-gray-800 via-primary to-gray-900 
             bg-clip-text text-transparent tracking-tight"
         >
@@ -35,7 +35,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-base sm:text-lg text-gray-600 max-w-xl"
+          className="text-base sm:text-lg lg:text-md text-gray-600 max-w-xl"
         >
           Browse creative projects, connect directly with designers, or buy
           unique designs all in one hub for Ethiopian talent.
