@@ -1,109 +1,115 @@
-import React from 'react'
-import Link from 'next/link';
+"use client";
 
+import Link from "next/link";
+import { FaTwitter, FaInstagram, FaLinkedin, FaDribbble } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <header className=" border w-full h-20 z-50 ">
-      {/* Background animation inside header */}
-      {/* <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          className="absolute -top-10 -left-20 w-60 h-60 bg-pink-300 rounded-full filter blur-3xl opacity-40"
-          animate={{ x: [0, 30, 0], y: [0, 20, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-16 -right-10 w-72 h-72 bg-indigo-300 rounded-full filter blur-3xl opacity-40"
-          animate={{ x: [0, -40, 0], y: [0, -20, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div> */}
-
-      {/* Header Content */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 md:px-20 relative z-10 ">
-        {/* Logo */}
+    <footer className="w-full border-t bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 py-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Brand */}
         <div>
-          <h1 className="font-bold text-2xl cursor-pointer text-gray-900">
-            <Link href="/">Qaalii</Link>
-          </h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-3">Qaalii</h1>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            A creative hub connecting Ethiopian designers and clients through
+            design, innovation, and collaboration.  
+          </p>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex">
-          <ul className="flex items-center space-x-8 font-semibold text-gray-700">
-            <li>
-              <Link
-                href="/explore"
-                className="hover:text-gray-900 transition-colors"
-              >
-                Explore
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/find-talent"
-                className="hover:text-gray-900 transition-colors"
-              >
-                Find Talent
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/get-hired"
-                className="hover:text-gray-900 transition-colors"
-              >
-                Get Hired
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blog"
-                className="hover:text-gray-900 transition-colors"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        {/* Links */}
+        <div className="flex justify-between md:justify-center md:space-x-16">
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+              Explore
+            </h3>
+            <ul className="space-y-2 text-gray-600 text-sm">
+              <li>
+                <Link href="/explore" className="hover:text-gray-900">
+                  Discover Designs
+                </Link>
+              </li>
+              <li>
+                <Link href="/find-talent" className="hover:text-gray-900">
+                  Find Talent
+                </Link>
+              </li>
+              <li>
+                <Link href="/get-hired" className="hover:text-gray-900">
+                  Get Hired
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-gray-900">
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-        {/* Login / CTA */}
-        <div className="hidden md:block lg:flex gap-x-4">
-          <Link
-            href="/login"
-            className="px-6 py-2 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
-          >
-            Login
-          </Link>
-          <Link
-            href="/register"
-            className="px-6 py-2 rounded-full border text-slate-800 font-semibold hover:bg-gray-800 transition-colors"
-          >
-            register
-          </Link>
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+              Support
+            </h3>
+            <ul className="space-y-2 text-gray-600 text-sm">
+              <li>
+                <Link href="/about" className="hover:text-gray-900">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-gray-900">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-gray-900">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-gray-900">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden">
-          <button className="p-2 rounded-md hover:bg-gray-100 transition">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+        {/* Social icons */}
+        <div className="flex md:justify-end items-start space-x-5">
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaTwitter size={20} />
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaInstagram size={20} />
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaLinkedin size={20} />
+          </Link>
+          <Link
+            href="#"
+            className="text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <FaDribbble size={20} />
+          </Link>
         </div>
       </div>
-    </header>
-  );
-}
 
-export default Footer
+      {/* Bottom bar */}
+      <div className="border-t py-4 text-center text-gray-500 text-sm">
+        © {new Date().getFullYear()} Qaalii Design Hub. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
