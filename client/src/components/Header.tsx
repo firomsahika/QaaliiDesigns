@@ -17,6 +17,11 @@ const Header = () => {
           <ul className="flex items-center space-x-8 text-sm font-semibold text-gray-700">
             <li>
               <Link href="/explore" className="hover:text-gray-900 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/explore" className="hover:text-gray-900 transition-colors">
                 Explore
               </Link>
             </li>
