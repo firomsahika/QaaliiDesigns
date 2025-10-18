@@ -13,8 +13,12 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative flex flex-col items-center text-center space-y-6 max-w-2xl z-10">
         {/* Subtitle */}
-        <p className="font-semibold shadow-2xl text-lg tracking-wide text-pink-300">
-          Qaalii Designs
+       <p
+          className="font-semibold text-sm sm:text-xl   
+          bg-gradient-to-r from-primary via-purple-300 to-pink-300 
+          bg-clip-text text-transparent  italic drop-shadow-md animate-pulse"
+        >
+          TalentED — Ethiopia’s Creative Marketplace
         </p>
 
         {/* Headline */}

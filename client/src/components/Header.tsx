@@ -7,8 +7,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-6 md:px-20 relative z-10">
         {/* Logo (Left) */}
         <div className="flex-1 flex items-center">
-          <h1 className="font-bold text-xl cursor-pointer text-gray-900">
-            <Link href="/">Qaalii</Link>
+          <h1 className="font-bold text-xl cursor-pointer  text-gray-900">
+            <Link href="/">talentED</Link>
           </h1>
         </div>
 
