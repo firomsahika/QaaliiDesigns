@@ -7,10 +7,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const categories = [
   "All",
+  "Branding",
+  "Website",
+  "Mobile",
+  "Product Design",
+  "LandingPage",
   "Logo Design",
-  "Poster Design",
-  "3D Art",
-  "UI/UX",
   "Illustration",
   "Typography",
 ];
