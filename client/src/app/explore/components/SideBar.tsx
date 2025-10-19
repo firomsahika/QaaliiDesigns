@@ -19,18 +19,25 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 border-r pt-20 border-gray-200 bg-white/80 backdrop-blur-md h-screen sticky top-0">
-      <ScrollArea className="h-full p-4 space-y-2">
+    <aside className="w-50 pt-10 border bg-white/80 backdrop-blur-md rounded-2xl h-screen sticky top-0">
+      <ScrollArea className="h-full p-4 space-y-10">
         {categories.map((cat) => {
           const slug = cat.toLowerCase().replace(/\s+/g, "-");
-          const active = (pathname?.endsWith(slug) ?? false) || (pathname === "/explore" && cat === "All");
+          const href = slug === "all" ? "/explore/all" : `/explore/${slug}`;
+
+          // ✅ Fix active state logic
+          const isActive =
+            pathname === href ||
+            (cat === "All" &&
+              (pathname === "/explore/categories" || pathname === "/explore/categories"));
+
           return (
             <Link
               key={cat}
-              href={`/explore/${slug === "all" ? "" : slug}`}
+              href={href}
               className={cn(
-                "block px-4 py-2.5 rounded-lg text-sm font-medium transition-all",
-                active
+                "block px-4 border my-5 py-2.5 rounded-lg text-sm font-medium transition-all",
+                isActive
                   ? "bg-primary text-white shadow-md"
                   : "text-gray-700 hover:bg-gray-100"
               )}
