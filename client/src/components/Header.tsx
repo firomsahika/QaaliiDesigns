@@ -1,42 +1,55 @@
+"use client";
+
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Header = () => {
+  const pathName = usePathname() || "/";
+
+  const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
+  const isActive = (href: string) => normalize(pathName) === normalize(href);
+
+  const navLinkClass = (href: string) =>
+    `transition-colors px-5 py-1.5 rounded-full font-semibold ${
+      isActive(href) ? 'bg-gray-200 text-gray-900' : 'text-gray-700 hover:text-gray-900'
+    }`
+
   return (
-    <header className=" w-full shadow-sm z-50 bg-white fixed top-0 left-0 ">
-      <div className="mx-auto flex items-center justify-between h-16 px-6 md:px-20 relative z-10">
+    <header className="w-full shadow-sm z-50 bg-white fixed top-0 left-0">
+      <div className="mx-auto flex items-center justify-between h-16 px-6 md:px-14 relative z-10">
         {/* Logo (Left) */}
         <div className="flex-1 flex items-center">
-          <h1 className="font-bold text-xl cursor-pointer  text-gray-900">
+          <h1 className="font-bold text-xl cursor-pointer text-gray-900">
             <Link href="/">talentED</Link>
           </h1>
         </div>
 
         {/* Navigation (Center) */}
-        <nav className="flex-1 hidden md:flex justify-center">
-          <ul className="flex items-center space-x-8 text-sm font-semibold text-gray-700">
+        <nav className="flex-1 hidden md:flex justify-center text-nowrap">
+          <ul className="flex items-center  space-x-4 text-sm">
             <li>
-              <Link href="/" className="hover:text-gray-900 transition-colors">
+              <Link href="/" className={navLinkClass("/")}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/explore/categories" className="hover:text-gray-900 transition-colors">
+              <Link href="/explore/categories" className={navLinkClass("/explore/categories")}>
                 Explore
               </Link>
             </li>
             <li>
-              <Link href="/find-talent" className="hover:text-gray-900 transition-colors">
+              <Link href="/find-talent" className={navLinkClass("/find-talent")}>
                 Find Talent
               </Link>
             </li>
             <li>
-              <Link href="/get-hired" className="hover:text-gray-900 transition-colors">
+              <Link href="/get-hired" className={navLinkClass("/get-hired")}>
                 Get Hired
               </Link>
             </li>
             <li>
-              <Link href="/blog" className="hover:text-gray-900 transition-colors">
+              <Link href="/blog" className={navLinkClass("/blog")}>
                 Blog
               </Link>
             </li>
@@ -44,7 +57,7 @@ const Header = () => {
         </nav>
 
         {/* Login/Register (Right) */}
-        <div className="flex-1 hidden md:flex  text-sm justify-end gap-x-4">
+        <div className="flex-1 hidden md:flex text-sm justify-end gap-x-4">
           <Link
             href="/login"
             className="px-6 py-2 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors"

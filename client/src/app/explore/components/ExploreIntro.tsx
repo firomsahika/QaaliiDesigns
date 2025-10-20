@@ -39,7 +39,7 @@ export default function ExploreIntro() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight"
+          className="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight"
         >
           Explore <span className="text-gray-700">Ethiopia’s Design Talent</span>
         </motion.h1>

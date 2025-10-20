@@ -21,8 +21,8 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-50 pt-10 border bg-white/80 backdrop-blur-md rounded-2xl h-screen sticky top-0">
-      <ScrollArea className="h-full p-4 space-y-10">
+    <aside className="w-54 pt-5 border bg-white/80 backdrop-blur-md rounded-2xl h-screen sticky top-0">
+      <ScrollArea className="h-full p-5 space-y-10">
         {categories.map((cat) => {
           const slug = cat.toLowerCase().replace(/\s+/g, "-");
           const href = slug === "all" ? "/explore/all" : `/explore/${slug}`;

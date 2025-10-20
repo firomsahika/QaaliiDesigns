@@ -22,7 +22,7 @@ export default function CategoryPage({
       {datasToShow.length > 0 ? (
         <DesignGrid datas={datasToShow} />
       ) : (
-        <p className="text-gray-500 mt-10 text-center">
+        <p className="text-gray-500 mt-5 text-center">
           No designs found in this category.
         </p>
       )}
