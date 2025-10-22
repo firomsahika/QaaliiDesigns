@@ -23,8 +23,9 @@ export function Sidebar() {
   const categoryParam = searchParams?.get("category")?.toLowerCase() ?? "all";
 
   return (
-    <aside className="w-54 pt-5 border bg-white/80 backdrop-blur-md rounded-2xl h-screen sticky top-0">
+    <aside className="w-54 pt-5 border  bg-white/80 backdrop-blur-md rounded-2xl h-screen sticky top-0">
       <ScrollArea className="h-full p-5 space-y-10">
+        <p>Select Category</p>
         {categories.map((cat) => {
           const slug = cat.toLowerCase().replace(/\s+/g, "-");
           const href = `/explore/categories?category=${encodeURIComponent(slug)}`;

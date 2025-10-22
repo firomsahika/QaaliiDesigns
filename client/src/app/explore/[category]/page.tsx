@@ -1,5 +1,8 @@
 import DesignGrid from "../components/DesignGrid";
 import datas from "../../design/designDatas/CardData";
+import { DesignPagination } from "@/components/Pagination";
+
+
 
 export default function CategoriesPage({
   searchParams,
