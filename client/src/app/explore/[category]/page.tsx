@@ -1,18 +1,22 @@
 import DesignGrid from "../components/DesignGrid";
 import datas from "../../design/designDatas/CardData";
 
-export default function CategoryPage({
-  params,
+export default function CategoriesPage({
+  searchParams,
 }: {
-  params: { category: string };
+  searchParams?: { category?: string };
 }) {
-  const categoryParam = params.category?.toLowerCase().replace(/\s+/g, "-");
+  const rawCategory = (searchParams?.category ?? "all") as string;
+  const categoryParam = decodeURIComponent(rawCategory)
+    .toLowerCase()
+    .replace(/\s+/g, "-");
 
   const filteredDatas =
     categoryParam === "all"
       ? datas
       : datas.filter(
-          (item) => item.category.toLowerCase().replace(/\s+/g, "-") === categoryParam
+          (item) =>
+            item.category.toLowerCase().replace(/\s+/g, "-") === categoryParam
         );
 
   const datasToShow = filteredDatas.length > 0 ? filteredDatas : [];

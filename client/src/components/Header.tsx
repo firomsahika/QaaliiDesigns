@@ -1,23 +1,29 @@
 "use client";
 
-import React from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const pathName = usePathname() || "/";
 
-  const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
-  const isActive = (href: string) => normalize(pathName) === normalize(href);
+  const normalize = (p: string) => p.replace(/\/+$/, "") || "/";
+  const isActive = (href: string) => {
+    const p = normalize(pathName);
+    const h = normalize(href);
+
+    if (h === "/") return p === h;
+    return p === h || p.startsWith(h + "/");
+  };
 
   const navLinkClass = (href: string) =>
-    `transition-colors px-5 py-1.5 rounded-full font-semibold ${
-      isActive(href) ? 'bg-gray-200 text-gray-900' : 'text-gray-700 hover:text-gray-900'
-    }`
+    `transition-colors px-3 py-1 rounded-full font-semibold ${
+      isActive(href) ? "bg-gray-200 text-gray-900" : "text-gray-700 hover:text-gray-900"
+    }`;
 
   return (
     <header className="w-full shadow-sm z-50 bg-white fixed top-0 left-0">
-      <div className="mx-auto flex items-center justify-between h-16 px-6 md:px-14 relative z-10">
+      <div className="mx-auto flex items-center justify-between h-16 px-6 md:px-20 relative z-10">
         {/* Logo (Left) */}
         <div className="flex-1 flex items-center">
           <h1 className="font-bold text-xl cursor-pointer text-gray-900">
@@ -27,14 +33,15 @@ const Header = () => {
 
         {/* Navigation (Center) */}
         <nav className="flex-1 hidden md:flex justify-center text-nowrap">
-          <ul className="flex items-center  space-x-4 text-sm">
+          <ul className="flex items-center space-x-4 text-sm">
             <li>
               <Link href="/" className={navLinkClass("/")}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/explore/categories" className={navLinkClass("/explore/categories")}>
+              {/* go to categories route with query param (e.g. ?category=all) */}
+              <Link href="/explore/categories?category=all" className={navLinkClass("/explore")}>
                 Explore
               </Link>
             </li>
@@ -73,7 +80,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

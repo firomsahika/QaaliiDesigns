@@ -7,7 +7,7 @@ export default function ExploreLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex  flex-col min-h-screen gap-10">
+    <div className="flex flex-col min-h-screen gap-10">
       {/* ✅ Stays fixed — not re-rendered on route change */}
       <ExploreIntro />
 
