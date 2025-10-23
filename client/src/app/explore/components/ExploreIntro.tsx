@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ExploreIntro() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center  text-center px-6 py-20 overflow-hidden">
+    <section className="relative  flex flex-col justify-center items-center  text-center px-6 pt-30 pb-10 overflow-hidden">
       {/* Soft geometric background */}
       <div className="absolute inset-0 opacity-40">
         <svg

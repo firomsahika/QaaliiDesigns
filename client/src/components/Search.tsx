@@ -14,7 +14,7 @@ export function SearchInput({placeholder= "Search..."}: Placeholder) {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="relative  w-full max-w-xl mx-auto"
+      className="relative  w-full max-w-md self-start"
     >
       <Input
         type="text"
