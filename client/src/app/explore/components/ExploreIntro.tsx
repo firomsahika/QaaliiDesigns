@@ -49,7 +49,7 @@ export default function ExploreIntro() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl"
+          className="text-gray-600 text-sm md:text-lg leading-relaxed max-w-2xl"
         >
           <strong>talentED</strong> is where creativity meets opportunity.  
           Designers share their unique projects and build visibility — while 
@@ -58,7 +58,7 @@ export default function ExploreIntro() {
         </motion.p>
 
         {/* CTA Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -68,7 +68,7 @@ export default function ExploreIntro() {
               Explore Designs
             </Button>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
