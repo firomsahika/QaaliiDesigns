@@ -3,6 +3,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import {Heart}  from "lucide-react"
+
 
 export function DesignCard({ item }: { item: any }) {
   const pathname = usePathname();
@@ -22,9 +24,15 @@ export function DesignCard({ item }: { item: any }) {
         height={300}
         className="w-full h-52 object-cover"
       />
-      <div className="p-3">
+      <div className="flex items-center justify-between">
+        <div className="p-3">
         <h3 className="text-sm font-semibold text-gray-800">{item.category}</h3>
         <p className="text-xs text-gray-500">{item.name}</p>
+      </div>
+      <div className="flex items-center gap-1 mr-3">
+        <Heart size={16} className="text-pink-400 bg-pink"/>
+        <span className="text-xs text-gray-500">{item.likeCount}</span>
+      </div>
       </div>
     </motion.div>
     </Link>                     

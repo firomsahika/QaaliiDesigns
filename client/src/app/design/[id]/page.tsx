@@ -17,10 +17,10 @@ export default function DesignDetailPage() {
   const { img, avatar, name, category, description, likeCount } = design;
 
   return (
-    <div className="max-w-6xl mx-auto px-6 pt-20">
+    <div className="max-w-6xl flex flex-col  justify-center gap-5 mx-auto px-6 pt-10  md:pt-18 lg:pt-26 py-16">
       {/* Profile & Category */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between mb-6 lg:gap-20">
+        <div className="flex items-center justify-between gap-3">
           <Image
             src={avatar}
             alt={name}
@@ -28,11 +28,12 @@ export default function DesignDetailPage() {
             height={50}
             className="rounded-full object-cover aspect-square"
           />
-          <div>
+          <div className="">
             <p className="font-semibold text-lg">{name}</p>
             <p className="text-sm text-gray-500">{category}</p>
           </div>
         </div>
+
         <div className="flex items-center gap-6 text-gray-600">
           <div className="flex items-center gap-2">
             <Heart className="w-5 h-5 text-red-500" />
@@ -40,6 +41,7 @@ export default function DesignDetailPage() {
           </div>
           <Button className="rounded-full" >Get in touch</Button>
         </div>
+        
       </div>
 
       {/* Design Image */}
@@ -54,9 +56,11 @@ export default function DesignDetailPage() {
       </div>
 
       {/* Description */}
-      <div className="prose mx-10 md:mx-16 lg:mx-24 flex items-center justify-center">
+      <div className=" lg:max-w-md  flex items-center justify-center">
         <p >{description}</p>
       </div>
+
+      
     </div>
   );
 }

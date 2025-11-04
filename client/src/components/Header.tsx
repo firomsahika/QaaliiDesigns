@@ -3,7 +3,10 @@
 import React, {useState} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PersonStandingIcon } from "lucide-react";
+import {User } from "lucide-react";
+import DropDownMenuCheckboxes from "./DropDown";
+import {MessageCircleMore} from "lucide-react"
+import {Bell} from "lucide-react"
 
 const Header = () => {
   const pathName = usePathname() || "/";
@@ -27,14 +30,14 @@ const Header = () => {
     <header className="w-full shadow-sm z-50 bg-white fixed top-0 left-0">
       <div className="mx-auto flex items-center justify-between h-16 px-6 md:px-20 relative z-10">
         {/* Logo (Left) */}
-        <div className="flex-1 flex items-center">
+        <div className="flex items-center">
           <h1 className="font-bold text-xl cursor-pointer text-gray-900">
             <Link href="/">talentED</Link>
           </h1>
         </div>
 
         {/* Navigation (Center) */}
-        <nav className="flex-1 hidden md:flex justify-center text-nowrap">
+        <nav className=" hidden md:flex justify-center text-nowrap">
           <ul className="flex items-center space-x-4 text-sm">
             <li>
               <Link href="/" className={navLinkClass("/")}>
@@ -66,13 +69,15 @@ const Header = () => {
         </nav>
 
         {/* Login/Register (Right) */}
-        <div className="flex-1 flex items-center justify-between">
+        <div className=" flex items-center justify-between gap-10">
+             <div className="flex items-center justify-center gap-5 ">
+               <MessageCircleMore  className="cursor-pointer"/>
+               <Bell className="cursor-pointer"/>
+             </div>
           {
           isloggedin ? (
-            <div className="flex-1 md-flex ">
-              <Link href="/user/profile" className="cursor-pointer">
-              <PersonStandingIcon />
-              </Link>
+            <div className="pr-10  flex items-center justify-center gap-4">
+              <DropDownMenuCheckboxes />
             </div>
           )
             :
