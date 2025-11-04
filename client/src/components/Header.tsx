@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PersonStandingIcon } from "lucide-react";
 
 const Header = () => {
   const pathName = usePathname() || "/";
+  const [isloggedin, setIsloggedin ] = useState(true);
 
   const normalize = (p: string) => p.replace(/\/+$/, "") || "/";
   const isActive = (href: string) => {
@@ -64,7 +66,18 @@ const Header = () => {
         </nav>
 
         {/* Login/Register (Right) */}
-        <div className="flex-1 hidden md:flex text-sm justify-end gap-x-4">
+        <div className="flex-1 flex items-center justify-between">
+          {
+          isloggedin ? (
+            <div className="flex-1 md-flex ">
+              <Link href="/user/profile" className="cursor-pointer">
+              <PersonStandingIcon />
+              </Link>
+            </div>
+          )
+            :
+            (
+          <div className="flex-1 hidden md:flex text-sm justify-end gap-x-4">
           <Link
             href="/login"
             className="px-6 py-2 rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition-colors"
@@ -78,6 +91,10 @@ const Header = () => {
             Register
           </Link>
         </div>
+          )
+        }
+      </div>
+        
       </div>
     </header>
   );

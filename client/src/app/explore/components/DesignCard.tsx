@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export function DesignCard({ item }: { item: any }) {
   const pathname = usePathname();
@@ -9,7 +10,8 @@ export function DesignCard({ item }: { item: any }) {
   
 
   return (
-    <motion.div
+    <Link href={`/design/${item.id}`}>
+      <motion.div
       whileHover={{ scale: 1.03 }}
       className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all cursor-pointer"
     >
@@ -25,5 +27,6 @@ export function DesignCard({ item }: { item: any }) {
         <p className="text-xs text-gray-500">{item.name}</p>
       </div>
     </motion.div>
+    </Link>                     
   );
 }
